@@ -13,7 +13,7 @@ Los usuarios podrán usar este espacio como un auxiliar indispensable para adqui
 
 ## Créditos
 
-- [Instituto de Educación Media Superior](https://iems.edu.mx)
+- [Instituto de Educación Media Superior](http://iems.edu.mx)
 - [Alberto Fragoso](http://albertofragoso.com)
 
 
