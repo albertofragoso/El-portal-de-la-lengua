@@ -1,0 +1,24 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//Me
+.fixed { position:fixed; width: 20%; height: 75%; overflow: auto; overflow-x:hidden; }
+.btn-grad { color: #7952b3!important; background-color: rgba(0,0,0,0)!important; border-color: #7952b3!important; }
+.btn-grad:hover { color: #fff!important; background-color: #7952b3!important; border-color: #7952b3;}
+.btn-grad .list-group-item { border-color: rgba(0,0,0,0)!important; }
+.btn-white { color: #FFFFFF!important; background-color: rgba(0,0,0,0)!important; border-color: #FFFFFF!important; }
+.btn-white:hover { color: #fff!important; background-color: #7952b3!important; border-color: #7952b3;}
+.jumbo { color: #fff!important; background-color: #563d7c!important; border-color: #563d7c; }
+.jumbo p {color: #cdbfe3}
+
+.page-item.active .page-link { color: #fff; background-color: #7952b3!important; border-color: #7952b3!important; }
+.gray{color:#eceeef;}
+a { color: #7952b3!important; }
+.mce-notification{display:none!important;}
