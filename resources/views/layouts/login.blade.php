@@ -49,6 +49,11 @@
                         </li>
                     @else
                         <li class="nav-item dropdown mr-2">
+                          <a data-toggle="modal" data-target="#myModal" class="btn btn-grad btn-outline-success my-2 my-sm-0" role="button">
+                            ¿Dudas?
+                          </a>
+                        </li>
+                        <li class="nav-item dropdown mr-2">
                           <a href="#" class="dropdown-toggle btn btn-grad btn-outline-success my-2 my-sm-0" data-toggle="dropdown" role="button" aria-expanded="false">
                             Notificaciones <span class="caret"></span>
                           </a>
@@ -64,7 +69,7 @@
                                         Nuevo articulo
                                 </a>
                                 <hr>
-                                <a class="dropdown-item" href="/articulos/nuevo">
+                                <a class="dropdown-item" href="/articulos/actualizar">
                                         Modificar articulos
                                 </a>
                                 <hr>
@@ -94,6 +99,47 @@
       <footer class="text-center">
         <p>&copy; Instituto de Educacion Media Superior {{ date('Y') }}</p>
       </footer>
+    </div>
+    <!--Modal dudas-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Escribe tu duda y con gusto la debatimos.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="/conversaciones/create" method="post">
+            <div class="modal-body">
+              {{ csrf_field() }}
+              <div class="form-group {{ $errors->has('conversacion') ? ' has-danger' : '' }}">
+                <label for="recipient-name" class="form-control-label">Título</label>
+                <input type="text" class="form-control" id="conversacion" name="conversacion" required>
+                @if ($errors->has('conversacion'))
+                  <div class="form-control-feedback">
+                      <strong>{{ $errors->first('conversacion') }}</strong>
+                  </div>
+                @endif
+              </div>
+              <div class="form-group {{ $errors->has('mensaje') ? ' has-danger' : '' }}">
+                <label for="message-text" class="form-control-label">Duda</label>
+                <input type="text" class="form-control" id="mensaje" name="mensaje" required>
+                @if ($errors->has('mensaje'))
+                  <div class="form-control-feedback">
+                      <strong>{{ $errors->first('mensaje') }}</strong>
+                  </div>
+                @endif
+              </div>
+              <small class="text-muted">Este proceso puede tardar un poco en lo que notificamos a los administradores.</small>
+            </div>
+            <div class="modal-footer">
+              <a class="btn btn-grad" href="/conversaciones">Ver todas las dudas</a>
+              <button type="submit" class="btn btn-grad">¡Listo!</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>

@@ -69,6 +69,10 @@
                                         Nuevo articulo
                                 </a>
                                 <hr>
+                                <a class="dropdown-item" href="/articulos/actualizar">
+                                        Modificar articulos
+                                </a>
+                                <hr>
                               @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
@@ -169,6 +173,7 @@
               <small class="text-muted">Este proceso puede tardar un poco en lo que notificamos a los administradores.</small>
             </div>
             <div class="modal-footer">
+              <a class="btn btn-grad" href="/conversaciones">Ver todas las dudas</a>
               <button type="submit" class="btn btn-grad">¡Listo!</button>
             </div>
           </form>

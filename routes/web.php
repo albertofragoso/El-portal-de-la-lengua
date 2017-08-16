@@ -15,6 +15,11 @@ use App\Http\Middleware\CheckRoll;
 Route::group(['middleware' => 'auth'], function () {
   Route::get('/articulos/nuevo', 'ArticulosController@nuevo')->middleware(CheckRoll::class); //Verifica usuario logueado; Cambiar por que sea solo admin
   Route::post('/articulos/create', 'ArticulosController@create')->middleware(CheckRoll::class); //Verifica usuario logueado; Cambiar por que sea solo admin
+  Route::get('/articulos/{articulo}/actualizar', 'ArticulosController@actualizar')->middleware(CheckRoll::class);
+  Route::post('/articulos/{articulo}/update', 'ArticulosController@update')->middleware(CheckRoll::class);
+  Route::get('/articulos/actualizar', 'ArticulosController@showUpdate')->middleware(CheckRoll::class);
+
+  Route::get('/conversaciones', 'ConversacionesController@showAll');
   Route::post('/conversaciones/create', 'ConversacionesController@create');
   Route::get('/conversaciones/{conversacion}', 'ConversacionesController@show');
   Route::post('/conversaciones/{conversacion}/response', 'ConversacionesController@response');

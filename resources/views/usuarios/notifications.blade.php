@@ -12,7 +12,7 @@
       </a>
     @else
       <a href='/conversaciones/{{ $notification->data["conversacion"]["id"] }}'>
-        {{ $notification->data["user"]["name"] }} ha respondido tu duda: {{ $notification->data["conversacion"]["titulo"] }}
+        {{ $notification->data["user"]["name"] }} ha respondido tu duda: {{ $notification->data["conversacion"]["conversacion"] }}
       </a>
     @endif
   </div>

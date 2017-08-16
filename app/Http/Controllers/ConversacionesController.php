@@ -39,8 +39,7 @@ class ConversacionesController extends Controller
       return redirect('/conversaciones/'.$conversacion->id);
     }
 
-    public function response(Conversacion $conversacion, Request $request)
-    {
+    public function response(Conversacion $conversacion, Request $request) {
       $user = $request->user();
       $conversacion->users()->attach($user);
       $contenido = $request->input('mensaje');
@@ -70,8 +69,7 @@ class ConversacionesController extends Controller
       return redirect('/conversaciones/'.$conversacion->id)->withSuccess('Respuesta enviada.');
     }
 
-    public function show(Conversacion $conversacion)
-    {
+    public function show(Conversacion $conversacion) {
       $conversacion->load('users', 'mensajes');
       //dd($conversacion);
 
@@ -79,5 +77,13 @@ class ConversacionesController extends Controller
         'conversacion' => $conversacion,
         //'user' => auth()->user(),
       ]);
+    }
+
+    public function showAll() {
+
+        $conversaciones = Conversacion::all();
+        return view('conversaciones.dudas', [
+          'conversaciones' => $conversaciones,
+        ]);
     }
 }

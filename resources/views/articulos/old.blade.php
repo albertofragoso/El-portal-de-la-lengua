@@ -5,7 +5,7 @@
   <h4 class="alert-heading">Esta es una versión antigua de esta página, editada el {{ $modificacion->created_at }}. La dirección URL es un enlace permanente a esta versión, que puede ser diferente de la versión actual.</h4>
 </div>
 <div class="card">
-  <img class="card-img-top" src="{{ $modificacion->imagen }}" alt="{{ $modificacion->titulo }}">
+  <img class="card-img-top" src="{{ $modificacion->imagen }}" alt="{{ $modificacion->titulo }}" style="width:100%">
   <div class="card-block">
     <h1 class="card-title">{{ $modificacion->titulo }}</h1>
       <small class="text-muted">Escrito por: <a href="#">{{ $modificacion->user->name }}</a></small>

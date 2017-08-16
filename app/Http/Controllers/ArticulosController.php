@@ -42,6 +42,23 @@ class ArticulosController extends Controller {
     return redirect('/articulos/'.$articulo->id);
   }
 
+  public function update(Articulo $articulo, Request $request) {
+
+    Articulo::where('id', $articulo->id)
+            ->update([
+            'titulo' => $request->input('titulo'),
+            'contenido' => $request->input('articulo'),
+             ]);
+
+    return redirect('/articulos/'.$articulo->id.'/actualizar')->withSuccess('Articulo modificado.');
+  }
+
+  public function actualizar(Articulo $articulo) {
+    return view('articulos.update', [
+      'articulo' => $articulo,
+    ]);
+  }
+
   public function nuevo() {
       return view('articulos.create');
   }
@@ -128,6 +145,15 @@ class ArticulosController extends Controller {
     return view( 'articulos.old' , [
       'modificacion' => $modificacion,
       'articulo' => $articulo,
+    ]);
+  }
+
+  public function showUpdate (Request $request) {
+    $user = $request->user();
+
+    $articulos = $user->load('articulos');
+    return view('articulos.modificar', [
+      'articulos' => $user->articulos,
     ]);
   }
 

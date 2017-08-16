@@ -6,6 +6,11 @@ Aplicación diseñada para contribuir con el desarrollo de habilidades de los es
 
 Los usuarios podrán usar este espacio como un auxiliar indispensable para adquirir y fortalecer las habilidades lingüísticas (leer, escribir, hablar y escuchar eficazmente), aprehender el idioma, para que lo disfruten, se recreen en él, lo amen a través de la literatura; pues la literatura es el momento en que el idioma aprende a hablar. El sitio está diseñado para que cualquier profesor de cualquier asignatura pueda servirse de él.
 
+## Requerimientos
+
+- Laravel 5.0 +
+- PHP 7 +
+
 ## Créditos
 
 - [Instituto de Educación Media Superior](https://iems.edu.mx)

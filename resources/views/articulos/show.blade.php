@@ -63,7 +63,7 @@
         <div class="modal-body">
           {{ csrf_field() }}
           <div class="form-group {{ $errors->has('descripcion') ? ' has-danger' : '' }}">
-            <label for="recipient-name" class="form-control-label">Resumen</label>
+            <label for="recipient-name" class="form-control-label">Resumen de la modificación que harás</label>
             <input type="text" class="form-control" id="descripcion" name="descripcion" required>
             @if ($errors->has('descripcion'))
               <div class="form-control-feedback">
