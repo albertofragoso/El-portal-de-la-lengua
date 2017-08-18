@@ -20,6 +20,7 @@ class CreateArticulosTable extends Migration
             $table->string('titulo');
             $table->text('contenido');
             $table->string('imagen');
+            $table->integer('view_count')->default(0);
         });
     }
 

@@ -11,12 +11,19 @@ use App\Message;
 use App\User;
 use App\Modificacion;
 use App\Conversacion;
+use App\Events\ArticleWasViewed;
+use Illuminate\Support\Facades\Auth;
 
 class ArticulosController extends Controller {
   public function show(Articulo $articulo) {
 
       //$articulo = Articulo::find($id);
       $articulos = Articulo::with('user')->firstOrFail();
+
+      if (Auth::user()) {
+        $articulos->Increment('view_count');
+      }
+
       return view('articulos.show', [
         'articulo' => $articulo,
         'articulos' => $articulos,
