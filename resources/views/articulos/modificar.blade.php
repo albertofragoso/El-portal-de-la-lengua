@@ -7,8 +7,11 @@
 <div class="card mb-3">
   <div class="card-header">
     <a href='/articulos/{{ $articulo->id }}/actualizar'>
-      {{ $articulo->titulo }}
+      <h5>{{ $articulo->titulo }}</h5>
     </a>
+  </div>
+  <div class="card-footer">
+    <small>Número de visitas: {{ $articulo->view_count }}</small>
   </div>
 </div>
 @empty

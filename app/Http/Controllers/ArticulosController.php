@@ -164,4 +164,11 @@ class ArticulosController extends Controller {
     ]);
   }
 
+  /*public function views () {
+      $articulos = Articulo::all();
+
+      return view('articulos.visitas', [
+        'articulos' => $articulos,
+      ]);
+  }*/
 }
